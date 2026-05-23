@@ -41,7 +41,7 @@ const Profile = () => {
             setUserPosts(postsRes.data);
         } catch (err) {
             console.error("Fetch error:", err);
-            toast.error("Data load nahi ho paya!");
+            toast.error("Data can not be loaded!");
         } finally {
             setLoading(false);
         }
@@ -183,12 +183,11 @@ const Profile = () => {
         /* YAHAN GRID HATA KAR COLUMNS LAGAYA HAI TAAKI POSTS UPAR KHISAK JAYEIN */
         <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 [column-fill:_balance] w-full">
             {userPosts.map(post => (
-                /* break-inside-avoid lagane se card beech me se break nahi hoga */
                 <div key={post._id} className="break-inside-avoid inline-block w-full transition-all duration-300">
                     <PostCard 
                         post={post}
                         loggedInUserId={loggedInUserId}
-                        isProfilePage={true} // 🔥 FIX: Ise TRUE kiya taaki Edit/Delete buttons visible ho sakein!
+                        isProfilePage={true} 
                         onCardClick={setSelectedPost}
                         onEdit={(id) => navigate(`/edit-post/${id}`)}
                         onDelete={handleDeleteClick}

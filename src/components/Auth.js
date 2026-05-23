@@ -157,7 +157,6 @@ const Auth = ({ initialMode = 'login' }) => {
             toast.success(data.message || "Verification passed!");
             
             // --- FLUID 180 DEGREE FLIP TRIGGER ---
-            // Card back se wapas front par cleanly ghumega aur wahan password set karne bolega.
             setForgotStep('password'); 
             setIsForgotMode(false); 
 
@@ -208,7 +207,7 @@ const Auth = ({ initialMode = 'login' }) => {
         setIsLogin(true); 
         setTimeout(() => {
             setForgotStep('email');
-        }, 800); // Animation khatam hone ke baad transition state clear karega
+        }, 800); 
     };
 
     return (
@@ -284,9 +283,7 @@ const Auth = ({ initialMode = 'login' }) => {
             <div className="flip-card-container w-full max-w-md h-[610px]">
                 <div className={`flip-card-inner h-full w-full ${(!isLogin || isForgotMode) ? 'flipped-active' : ''}`}>
                     
-                    {/* ========================================================
-                       FRONT INTERFACE SIDE (Login & New Password Step)
-                       ======================================================== */}
+                    {/* FRONT INTERFACE SIDE (Login & New Password Step) */}
                     <div className="flip-card-front bg-white p-8 rounded-2xl border border-slate-200/80 shadow-2xl flex flex-col justify-center h-full">
                         
                         {forgotStep === 'password' ? (
@@ -396,9 +393,7 @@ const Auth = ({ initialMode = 'login' }) => {
                         )}
                     </div>
 
-                    {/* ========================================================
-                       BACK INTERFACE SIDE (Signup & Recover Flow: Email & OTP)
-                       ======================================================== */}
+                    {/* BACK INTERFACE SIDE (Signup & Recover Flow: Email & OTP)*/}
                     <div className="flip-card-back bg-white p-8 rounded-2xl border border-slate-200/80 shadow-2xl flex flex-col justify-center h-full">
                         
                         {isForgotMode ? (

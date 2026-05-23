@@ -13,7 +13,7 @@ const ResetPassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (password !== confirmPassword) {
-            toast.error("Passwords match nahi ho rahe hain! ❌");
+            toast.error("Passwords are not match! ❌");
             return;
         }
 
@@ -21,9 +21,9 @@ const ResetPassword = () => {
             setLoading(true);
             const { data } = await API.post(`/auth/reset-password/${token}`, { password });
             toast.success(data.message);
-            navigate('/login'); // Success ke baad sidha login screen par redirection
+            navigate('/login'); 
         } catch (err) {
-            toast.error(err.response?.data?.message || "Kuch galat hua. Fir se try karein!");
+            toast.error(err.response?.data?.message || "somthing wants wront. try again!");
         } finally {
             setLoading(false);
         }
@@ -33,7 +33,7 @@ const ResetPassword = () => {
         <div className="fixed inset-0 w-screen h-screen bg-slate-50 flex items-center justify-center p-4">
             <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-2xl w-full max-w-md">
                 <h2 className="text-2xl font-bold text-slate-900 text-center mb-2">Set New Password</h2>
-                <p className="text-sm text-slate-500 text-center mb-6">Apna naya secure password select karein.</p>
+                <p className="text-sm text-slate-500 text-center mb-6">select your new secure password .</p>
                 
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>

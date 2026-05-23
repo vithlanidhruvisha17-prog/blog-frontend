@@ -43,7 +43,7 @@ const PostModal = ({
                     ✕
                 </button>
 
-                {/* Left Side: Media Gallery (Sirf tabhi dikhega jab media hoga) */}
+                {/* Left Side: Media Gallery*/}
                 {hasMedia && (
                     <div className="w-full md:w-1/2 bg-slate-950 flex items-center justify-center relative group select-none">
                         {post.media[currentIndex].resourceType === 'video' ? (

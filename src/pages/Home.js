@@ -96,7 +96,6 @@ const Home = () => {
     }
 
     return (
-        /* pb-24 mobile navigation bar se overlap rokne ke liye responsive banaya */
         <div className="antialiased pb-24 md:pb-16 min-h-screen relative bg-slate-50/60 px-4 pt-4 rounded-3xl overflow-hidden">
             
             {/* ─── PREMIUM SYSTEM GRID LAYER (CHEXES) ─── */}
@@ -106,7 +105,6 @@ const Home = () => {
             <div className="absolute top-10 left-1/4 w-96 h-96 bg-indigo-300/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-20 right-10 w-80 h-80 bg-cyan-300/10 rounded-full blur-3xl pointer-events-none" />
 
-            {/* CRITICAL FIX: Added md:pl-64 taaki laptop layout par custom fixed left sidebar ke upar overlap na ho */}
             <div className="max-w-6xl mx-auto relative z-10 space-y-8 w-full px-2 md:px-0 md:pl-64 lg:pl-0">
                 
                 {/* 1. HYPER-MODERN GLASSMORPHIC ACTION HUB */}

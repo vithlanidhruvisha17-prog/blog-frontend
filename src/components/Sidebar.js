@@ -9,9 +9,8 @@ const Sidebar = ({ handleLogout }) => {
 
     return (
         <>
-            {/* ========================================================================= */}
-            {/* 1. LAPTOP VIEW                                                            */}
-            {/* ========================================================================= */}
+            {/* 1. LAPTOP VIEW */}
+
             <aside className="hidden md:flex w-64 bg-white h-screen border-r border-slate-200 fixed top-0 left-0 flex-col justify-between p-5 antialiased z-40 select-none">
                 {/* Top: Logo and Navigation Links */}
                 <div className="flex flex-col space-y-8">
@@ -86,9 +85,8 @@ const Sidebar = ({ handleLogout }) => {
                 </div>
             </aside>
 
-            {/* ========================================================================= */}
-            {/* 2. MOBILE VIEW (ONLY VISIBLE ON MOBILE AS BOTTOM NAV)                     */}
-            {/* ========================================================================= */}
+            {/* 2. MOBILE VIEW (ONLY VISIBLE ON MOBILE AS BOTTOM NAV)*/}
+
             <div className="flex md:hidden fixed bottom-0 left-0 w-full h-16 bg-white border-t border-slate-200 justify-around items-center px-2 z-40 select-none">
                 <Link 
                     to="/" 

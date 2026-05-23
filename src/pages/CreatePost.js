@@ -30,7 +30,6 @@ const CreatePost = () => {
         if (response.data && response.data.result) {
             let aiResult = response.data.result;
 
-            // SAFE FIX: Agar data abhi bhi object form mein aa raha hai, toh use string mein badlein
             if (typeof aiResult === 'object') {
                 aiResult = aiResult.text || aiResult.result || JSON.stringify(aiResult);
             }
@@ -38,7 +37,6 @@ const CreatePost = () => {
             aiResult = aiResult.trim();
 
             if (type === 'title') {
-                // Formatting clean-up: Faltu ke quotes, markdown aur naye lines ko remove karein
                 let cleanTitle = aiResult
                     .split('\n')[0] 
                     .replace(/^["'*\s•\-\d.)]+|["'*\s]+$/g, '') 
@@ -183,7 +181,7 @@ const CreatePost = () => {
                             </div>
                             <textarea 
                                 className="w-full bg-white border border-slate-200/80 rounded-xl p-4 h-80 text-sm text-slate-800 placeholder-slate-400 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 resize-none transition-all shadow-sm leading-relaxed"
-                                placeholder="Type a raw thought (e.g. 'Write a short guide on why CSS Grid is better than Flexbox') and click 'Expand Story with AI'..."
+                                placeholder="Type a raw thought and click 'Expand Story with AI'..."
                                 value={formData.content}
                                 onChange={(e) => setFormData({...formData, content: e.target.value})} 
                                 required 

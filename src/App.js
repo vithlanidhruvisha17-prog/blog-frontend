@@ -10,10 +10,10 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ResetPassword from './components/ResetPassword';
 
-// 1. Google OAuth Provider ko import karein
+// 1. Google OAuth Provider import 
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
-// Layout aur Routing handle karne ke liye helper component
+
 function AppContent() {
   const location = useLocation();
   const [token, setToken] = useState(localStorage.getItem('token'));
@@ -33,12 +33,10 @@ function AppContent() {
     window.location.href = '/login';
   };
 
-  // Jin pages par humein sidebar nahi dikhana hai (Unified Auth Layout)
   const isAuthPage = location.pathname === '/login' || location.pathname === '/signup';
 
   return (
   <div className="bg-slate-50 min-h-screen font-sans flex flex-col md:flex-row">
-    {/* Sidebar tabhi dikhega jab user login/signup page pe na ho */}
     {!isAuthPage && <Sidebar handleLogout={handleLogout} />}
 
     {/* Main Content Area - FIXED FOR MOBILE */}
@@ -47,7 +45,6 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Home />} />
           
-          {/* Dono dynamic routes par Auth page chalega with custom modes */}
           <Route path="/signup" element={<Auth initialMode="signup" />} />
           <Route path="/login" element={<Auth initialMode="login" />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
@@ -63,7 +60,6 @@ function AppContent() {
 
 function App() {
   return (
-    // 2. Pure React App ko GoogleOAuthProvider se wrap karein aur hardcoded Client ID dein
     <GoogleOAuthProvider clientId="1019401085962-s7jkvt87ap1b72r8ie8hjdqtvig6504l.apps.googleusercontent.com">
       <Router>
         <ToastContainer 

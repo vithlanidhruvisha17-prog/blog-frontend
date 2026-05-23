@@ -18,7 +18,7 @@ const EditPost = () => {
                 setLoading(false);
             } catch (err) {
                 console.error("Fetch Error:", err);
-                toast.error("Blog load nahi ho paya!");
+                toast.error("Blog not loaded!");
                 navigate('/');
             }
         };
@@ -30,10 +30,10 @@ const EditPost = () => {
         setUpdating(true);
         try {
             await API.put(`/posts/${id}`, formData);
-            toast.success("Blog update ho gaya! ✨");
+            toast.success("Blog is updated! ✨");
             navigate('/');
         } catch (err) {
-            toast.error("Update fail ho gaya!");
+            toast.error("Update fail, try again!");
         } finally {
             setUpdating(false);
         }

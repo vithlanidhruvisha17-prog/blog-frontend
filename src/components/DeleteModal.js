@@ -2,10 +2,8 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 
 const DeleteConfirmModal = ({ isOpen, onClose, onConfirm }) => {
-    // Agar modal open nahi hai toh kuch bhi render mat karo
     if (!isOpen) return null;
 
-    // React Portal use karenge taaki ye pure app containers ke bahar direct body par mount ho
     return createPortal(
         <div className="fixed inset-0 min-h-screen w-screen z-[999999] flex items-center justify-center p-4 bg-slate-950/50 backdrop-blur-md left-0 top-0 right-0 bottom-0">
             <div className="bg-white border border-slate-200/80 w-full max-w-sm p-6 rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.2)] flex flex-col items-center text-center space-y-4 transform scale-100 transition-transform duration-200">
