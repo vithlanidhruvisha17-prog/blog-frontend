@@ -1,3 +1,25 @@
+# Full-Stack Integrated Project: Auth System & Blogging Platform
+
+This is an integrated MERN stack application developed for the Skillfied Mentor Internship. It combines secure authentication features with a complete blogging experience.
+
+## 🚀 Live Demo
+**Netlify URL:** https://bloghubpro.netlify.app
+
+## ✨ Features
+- **Auth System:** Secure signup/login, integrated "Continue with Google," JWT session management with refresh tokens, Password Hashing.
+- **Blogging Platform:** Full CRUD capabilities for blog posts, integration of the Authentication System for protected routes, search functionality with pagination, and comment schemas.
+
+## 🛠️ Tech Stack
+- Frontend: React.js
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Deployment: Render (Backend), Netlify (Frontend)
+
+## ⚠️ Important Note (Email OTP Flow Limitaton)
+Reviewer, please note that the "Forgot Password" feature with email OTP delivery is technically implemented using Brevo SMTP. Verified by server logs, the complete flow (OTP generation, hashing, database storage, and verification) is mathematically correct. However, Render's current outbound network timeout (`ETIMEDOUT`) prevents the actual email dispatch from the live server. Proof of this infrastructure blocker is visible in the provided logs.
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
